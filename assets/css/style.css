@@ -160,7 +160,7 @@ h1, h2, h3, h4, h5, h6 {
 .nav-menu a, .nav-menu a:focus {
   display: flex;
   align-items: center;
-  color: #eeeeee;
+  color: #45505b;
   padding: 10px 18px;
   margin-bottom: 8px;
   transition: 0.3s;
@@ -253,7 +253,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 #hero:before {
   content: "";
-  background: rgba(255, 255, 255, 0.8);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -283,7 +282,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero .social-links a {
   font-size: 24px;
   display: inline-block;
-  color: #eeeeee;
+  color: #45505b;
   line-height: 1;
   margin-right: 20px;
   transition: 0.3s;
@@ -325,7 +324,7 @@ section {
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
-  color: #eeeeee;
+  color: #45505b;
 }
 .section-title h2::before {
   content: "";
@@ -436,7 +435,7 @@ section {
   display: block;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
-  color: #eeeeee;
+  color: #45505b;
 }
 .skills .progress .skill .val {
   float: right;
@@ -460,7 +459,7 @@ section {
   font-weight: 700;
   margin-top: 20px;
   margin-bottom: 20px;
-  color: #eeeeee;
+  color: #45505b;
 }
 .resume .resume-item {
   padding: 0 0 20px 20px;
@@ -601,11 +600,11 @@ section {
 }
 .portfolio .portfolio-wrap .portfolio-info h4 {
   font-size: 20px;
-  color: #eeeeee;
+  color: #45505b;
   font-weight: 600;
 }
 .portfolio .portfolio-wrap .portfolio-info p {
-  color: #eeeeee;
+  color: #45505b;
   font-size: 14px;
   text-transform: uppercase;
   padding: 0;
@@ -616,7 +615,7 @@ section {
   z-index: 4;
 }
 .portfolio .portfolio-wrap .portfolio-links a {
-  color: #eeeeee;
+  color: #45505b;
   margin: 0 2px;
   font-size: 28px;
   display: inline-block;
@@ -738,7 +737,7 @@ section {
   font-size: 22px;
 }
 .services .icon-box h4 a {
-  color: #eeeeee;
+  color: #45505b;
   transition: ease-in-out 0.3s;
 }
 .services .icon-box p {
@@ -898,7 +897,7 @@ section {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 5px;
-  color: #eeeeee;
+  color: #45505b;
 }
 .contact .info p {
   padding: 0 0 0 60px;
@@ -1001,7 +1000,7 @@ section {
 --------------------------------------------------------------*/
 #footer {
   background: #f7f8f9;
-  color: #eeeeee;
+  color: #45505b;
   font-size: 14px;
   text-align: center;
   padding: 30px 0;
