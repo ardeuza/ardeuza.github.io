@@ -25,7 +25,7 @@
         width: 40%;
         min-height: 80px;
       }
-	  
+
       button {
         padding: 10px 20px;
         cursor: pointer;
@@ -36,7 +36,7 @@
         background-color: royalblue;
         color: white;
       }
-	  
+
       button:hover {
         background-color: darkblue;
       }
@@ -47,309 +47,236 @@
       }
     </style>
   </head>
-  <body><center>
+  <body>
+    <center>
       <button onclick="toggleFormatter()">Formatter</button>
-	  <button onclick="toggleWinner()">Winner Checker</button>
-    </div>
-
-    <div id="formatter"><center>
-      <h1>Formatter</h1>
-      <p>
-        Formatter ini akan otomatis menambahkan email, address solana, erc20 maupun trx</br>Sekaligus merapihkan index urutan
-        listaccount.json</br> Auto overwrite nilai, Kosongkan textarea jika tidak ingin mengubah nilai
-      </p>
-      <div>
-        <div>
-          <h3>Masukkan listaccount.json</h3>
-          <textarea
-            class="listaccount"
-            placeholder="Paste file listaccount dari folder resources/listaccount.json atau impor otomatis dari listaccount yg sudah ada dengan mengaktifkan perintah /list lalu kosongkan saja"
-          ></textarea>
-        </div>
-		<div>
-          <h3>Overwrite</h3>
-          <p>Timpa paksa dengan nilai baru</p>
-          <input type="checkbox" id="overwriteEmail" /> EMAIL  
-          <input type="checkbox" id="overwriteAddress" /> ERC20  
-          <input type="checkbox" id="overwriteSol" /> SOL  
-          <input type="checkbox" id="overwriteTrx" /> TRX<br />
-        </div>
-        <div>
-          <h3>Address ERC20</h3>
-          <textarea
-            id="evm"
-            placeholder="Kumpulan address BSC/ETH/MATIC, pisahkan dengan baris baru"
-          ></textarea>
-        </div>
-        <div>
-          <h3>Address Solana</h3>
-          <textarea
-            id="solana"
-            placeholder="Kumpulan address solana, pisahkan dengan baris baru"
-          ></textarea>
-        </div>
-        <div>
-          <h3>Address TRX</h3>
-          <textarea
-            id="trx"
-            placeholder="Kumpulan address trx, pisahkan dengan baris baru"
-          ></textarea>
-        </div>
-        <div>
-          <h3>Email</h3>
-          <textarea
-            id="email"
-            placeholder="Kumpulan email, pisahkan dengan baris baru"
-          ></textarea>
-        </div>
-
-        <button onclick="executeFormatter()">Jalankan</button>
+      <button onclick="toggleWinner()">Winner Checker</button>
       </div>
-
-      <div>
-        <h3>Hasil</h3>
-		<button onclick="select()">Seleksi semua</button></br></br>
-        <textarea
-          name="result"
-          class="result"
-          cols="30"
-          rows="10"
-          placeholder="Copy hasilnya"
-        ></textarea><br>
+      <div id="formatter">
+        <center>
+          <h1>Formatter</h1>
+          <p> Formatter ini akan otomatis menambahkan email, address solana, erc20 maupun trx </br>Sekaligus merapihkan index urutan listaccount.json </br> Auto overwrite nilai, Kosongkan textarea jika tidak ingin mengubah nilai </p>
+          <div>
+            <div>
+              <h3>Masukkan listaccount.json</h3>
+              <textarea class="listaccount" placeholder="Paste file listaccount dari folder resources/listaccount.json atau impor otomatis dari listaccount yg sudah ada dengan mengaktifkan perintah /list lalu kosongkan saja"></textarea>
+            </div>
+            <div>
+              <h3>Overwrite</h3>
+              <p>Timpa paksa dengan nilai baru</p>
+              <input type="checkbox" id="overwriteEmail" /> EMAIL <input type="checkbox" id="overwriteAddress" /> ERC20 <input type="checkbox" id="overwriteSol" /> SOL <input type="checkbox" id="overwriteTrx" /> TRX <br />
+            </div>
+            <div>
+              <h3>Address ERC20</h3>
+              <textarea id="evm" placeholder="Kumpulan address BSC/ETH/MATIC, pisahkan dengan baris baru"></textarea>
+            </div>
+            <div>
+              <h3>Address Solana</h3>
+              <textarea id="solana" placeholder="Kumpulan address solana, pisahkan dengan baris baru"></textarea>
+            </div>
+            <div>
+              <h3>Address TRX</h3>
+              <textarea id="trx" placeholder="Kumpulan address trx, pisahkan dengan baris baru"></textarea>
+            </div>
+            <div>
+              <h3>Email</h3>
+              <textarea id="email" placeholder="Kumpulan email, pisahkan dengan baris baru"></textarea>
+            </div>
+            <button onclick="executeFormatter()">Jalankan</button>
+          </div>
+          <div>
+            <h3>Hasil</h3>
+            <button onclick="select()">Seleksi semua</button>
+            </br>
+            </br>
+            <textarea name="result" class="result" cols="30" rows="10" placeholder="Copy hasilnya"></textarea>
+            <br>
+          </div>
       </div>
-    </div>
-    <div id="winner"><center>
-      <h1>Winner list checker</h1>
-      <p>
-        Checker ini mengecek apakah address akun-akun kita terdapat di dalam
-        address winner list atau tidak
-      </p>
-      <div>
-        <div>
-          <h3>Masukkan listaccount.json</h3>
-          <textarea
-            class="listaccount2"
-            placeholder="Paste file listaccount dari folder resources/listaccount.json atau impor otomatis dari listaccount yg sudah ada dengan mengaktifkan perintah /list lalu kosongkan saja"
-          ></textarea>
-        </div>
-        <div>
-          <h3>Tipe Address</h3>
-          <select id="type">
-            <option value="address" selected>BSC/ETH/Poly</option>
-            <option value="solana">Solana</option>
-            <option value="trx">TRX</option>
-          </select>
-        </div>
-        <div>
-          <h3>Winner list address</h3>
-          <textarea
-            id="winnerlist"
-            placeholder="Masukkan daftar address dari winner list, pisahkan baris baru"
-          ></textarea>
-        </div>
-        <button onclick="executeChecker()">Cek</button></br>
-        <button onclick="extractAddress()">Ekstrak Address</button>
+      <div id="winner">
+        <center>
+          <h1>Winner list checker</h1>
+          <p> Checker ini mengecek apakah address akun-akun kita terdapat di dalam address winner list atau tidak </p>
+          <div>
+            <div>
+              <h3>Masukkan listaccount.json</h3>
+              <textarea class="listaccount2" placeholder="Paste file listaccount dari folder resources/listaccount.json atau impor otomatis dari listaccount yg sudah ada dengan mengaktifkan perintah /list lalu kosongkan saja"></textarea>
+            </div>
+            <div>
+              <h3>Tipe Address</h3>
+              <select id="type">
+                <option value="address" selected>BSC/ETH/Poly</option>
+                <option value="solana">Solana</option>
+                <option value="trx">TRX</option>
+              </select>
+            </div>
+            <div>
+              <h3>Winner list address</h3>
+              <textarea id="winnerlist" placeholder="Masukkan daftar address dari winner list, pisahkan baris baru"></textarea>
+            </div>
+            <button onclick="executeChecker()">Cek</button>
+            </br>
+            <button onclick="extractAddress()">Ekstrak Address</button>
+          </div>
+          <div>
+            <h3>Hasil</h3>
+            <textarea name="result" class="result2" cols="30" rows="10" placeholder="Hasil address yang berada di winner list"></textarea>
+          </div>
       </div>
-
-      <div>
-        <h3>Hasil</h3>
-        <textarea
-          name="result"
-          class="result2"
-          cols="30"
-          rows="10"
-          placeholder="Hasil address yang berada di winner list"
-        ></textarea>
-      </div>
-    </div>
-    <script defer>
-      const $ = (el) => document.querySelector(el);
-      const _ = (el) => document.querySelectorAll(el);
-
-      const select = () => {
-        deSelect();
-
-        if (document.selection) {
-          let range = document.body.createTextRange();
-          range.moveToElementText(document.getElementById("result"));
-          range.select();
-        }
-
-        if (window.getSelection) {
-          let range = document.createRange();
-          range.selectNode(document.getElementById("result"));
-          window.getSelection().addRange(range);
-        }
-      };
-
-      const deSelect = () => {
-        if (document.selection) document.selection.empty();
-        if (window.getSelection) window.getSelection().removeAllRanges();
-      };
-
-      $("#winner").style.display = "none";
-      $("#formatter").style.display = "none";
-
-      const toggleFormatter = () => {
-        $("#winner").style.display = "none";
-
-        $("#formatter").style.display == "none"
-          ? ($("#formatter").style.display = "block")
-          : ($("#formatter").style.display = "none");
-      };
-
-      const toggleWinner = () => {
-        $("#formatter").style.display = "none";
-
-        $("#winner").style.display == "none"
-          ? ($("#winner").style.display = "block")
-          : ($("#winner").style.display = "none");
-      };
-
-      const isValidListAccount = async (el) => {
-        let val = $(el).value;
-        if (!val) {
-          const listDefault = await fetch("/checker");
-          if (listDefault.status !== 200) return false;
-
-          return listDefault.json();
-        }
-
-        try {
-          eval(val);
-
-          let list = JSON.parse(val);
-          if (!list.length) return false;
-
-          if (!list.every((el) => el.username)) return false;
-          if (!list.every((el) => el.phone)) return false;
-
-          return list;
-        } catch (error) {
-          return false;
-        }
-      };
-
-      const executeFormatter = async () => {
-        let list = await isValidListAccount(".listaccount");
-        if (!list)
-          return alert(
-            "listaccount.json tidak valid. Gunakan https://jsonlint.com untuk mengecek jsonmu"
-          );
-
-        list = list.map((el, id) => ({ ...el, id: id }));
-
-        let evm = $("#evm").value;
-        let overwriteAddress = $("#overwriteAddress").value;
-        let overwriteSol = $("#overwriteSol").value;
-        let overwriteTrx = $("#overwriteTrx").value;
-        let overwriteEmail = $("#overwriteEmail").value;
-        if (evm) {
-          evm = evm.split("\n").map((el) => el.trim());
-          let idevm = 0;
-
-          list = list.map((el) => {
-            if (!el.address || overwriteAddress) {
-              let adr = evm[idevm] || "";
-              idevm++;
-              return { ...el, address: adr };
-            }
-            return el;
-          });
-        }
-
-        let email = $("#email").value;
-        if (email) {
-          email = email.split("\n").map((el) => el.trim());
-          let idemail = 0;
-
-          list = list.map((el) => {
-            if (!el.email || overwriteEmail) {
-              let em = email[idemail] || "";
-              idemail++;
-              return { ...el, email: em };
-            }
-            return el;
-          });
-        }
-
-        let sol = $("#solana").value;
-        if (sol) {
-          sol = sol.split("\n").map((el) => el.trim());
-          let idsol = 0;
-
-          list = list.map((el) => {
-            if (!el.solana || overwriteSol) {
-              let solanaadr = sol[idsol] || "";
-              idsol++;
-              return { ...el, solana: solanaadr };
-            }
-
-            return el;
-          });
-        }
-
-        let trx = $("#trx").value;
-        if (trx) {
-          trx = trx.split("\n").map((el) => el.trim());
-          let idtrx = 0;
-
-          list = list.map((el) => {
-            if (!el.trx || overwriteTrx) {
-              let trxaddr = trx[idtrx] || "";
-              idtrx++;
-              return { ...el, trx: trxaddr };
-            }
-
-            return el;
-          });
-        }
-
-        let result = JSON.stringify(list, null, 4);
-        $(".result").value = result;
-      };
-
-      const extractAddress = async () => {
-        let list = await isValidListAccount(".listaccount2");
-        if (!list)
-          return alert(
-            "listaccount.json tidak valid. Gunakan https://jsonlint.com untuk mengecek jsonmu"
-          );
-
-        let type = $("#type").value;
-        let address = [];
-
-        list.forEach((el) => {
-          address.push(el[type]);
-        });
-
-        let result = address.join("\n");
-        $(".result2").value = result;
-      };
-
-      const executeChecker = async () => {
-        let list = await isValidListAccount(".listaccount2");
-        if (!list)
-          return alert(
-            "listaccount.json tidak valid. Gunakan https://jsonlint.com untuk mengecek jsonmu"
-          );
-        let winlist = $("#winnerlist").value;
-        if (!winlist) return alert("Winnerlist tidak boleh kosong");
-
-        winlist = winlist.split("\n").map((el) => el.trim());
-        if (!winlist.length) return alert("Winnerlist tidak boleh kosong");
-
-        let type = $("#type").value;
-        let address = [];
-        list.forEach((el) => {
-          if (winlist.includes(el[type])) {
-            address.push(el[type]);
+      <script defer>
+        const $ = (el) => document.querySelector(el);
+        const _ = (el) => document.querySelectorAll(el);
+        const select = () => {
+          deSelect();
+          if (document.selection) {
+            let range = document.body.createTextRange();
+            range.moveToElementText(document.getElementById("result"));
+            range.select();
           }
-        });
-        let result = address.join("\n");
-
-        $(".result2").value = result;
-      };
-    </script>
+          if (window.getSelection) {
+            let range = document.createRange();
+            range.selectNode(document.getElementById("result"));
+            window.getSelection().addRange(range);
+          }
+        };
+        const deSelect = () => {
+          if (document.selection) document.selection.empty();
+          if (window.getSelection) window.getSelection().removeAllRanges();
+        };
+        $("#winner").style.display = "none";
+        $("#formatter").style.display = "none";
+        const toggleFormatter = () => {
+          $("#winner").style.display = "none";
+          $("#formatter").style.display == "none" ? ($("#formatter").style.display = "block") : ($("#formatter").style.display = "none");
+        };
+        const toggleWinner = () => {
+          $("#formatter").style.display = "none";
+          $("#winner").style.display == "none" ? ($("#winner").style.display = "block") : ($("#winner").style.display = "none");
+        };
+        const isValidListAccount = async (el) => {
+          let val = $(el).value;
+          if (!val) {
+            const listDefault = await fetch("/checker");
+            if (listDefault.status !== 200) return false;
+            return listDefault.json();
+          }
+          try {
+            eval(val);
+            let list = JSON.parse(val);
+            if (!list.length) return false;
+            if (!list.every((el) => el.username)) return false;
+            if (!list.every((el) => el.phone)) return false;
+            return list;
+          } catch (error) {
+            return false;
+          }
+        };
+        const executeFormatter = async () => {
+          let list = await isValidListAccount(".listaccount");
+          if (!list) return alert("listaccount.json tidak valid. Gunakan https://jsonlint.com untuk mengecek jsonmu");
+          list = list.map((el, id) => ({
+            ...el,
+            id: id
+          }));
+          let evm = $("#evm").value;
+          let overwriteAddress = $("#overwriteAddress").value;
+          let overwriteSol = $("#overwriteSol").value;
+          let overwriteTrx = $("#overwriteTrx").value;
+          let overwriteEmail = $("#overwriteEmail").value;
+          if (evm) {
+            evm = evm.split("\n").map((el) => el.trim());
+            let idevm = 0;
+            list = list.map((el) => {
+              if (!el.address || overwriteAddress) {
+                let adr = evm[idevm] || "";
+                idevm++;
+                return {
+                  ...el,
+                  address: adr
+                };
+              }
+              return el;
+            });
+          }
+          let email = $("#email").value;
+          if (email) {
+            email = email.split("\n").map((el) => el.trim());
+            let idemail = 0;
+            list = list.map((el) => {
+              if (!el.email || overwriteEmail) {
+                let em = email[idemail] || "";
+                idemail++;
+                return {
+                  ...el,
+                  email: em
+                };
+              }
+              return el;
+            });
+          }
+          let sol = $("#solana").value;
+          if (sol) {
+            sol = sol.split("\n").map((el) => el.trim());
+            let idsol = 0;
+            list = list.map((el) => {
+              if (!el.solana || overwriteSol) {
+                let solanaadr = sol[idsol] || "";
+                idsol++;
+                return {
+                  ...el,
+                  solana: solanaadr
+                };
+              }
+              return el;
+            });
+          }
+          let trx = $("#trx").value;
+          if (trx) {
+            trx = trx.split("\n").map((el) => el.trim());
+            let idtrx = 0;
+            list = list.map((el) => {
+              if (!el.trx || overwriteTrx) {
+                let trxaddr = trx[idtrx] || "";
+                idtrx++;
+                return {
+                  ...el,
+                  trx: trxaddr
+                };
+              }
+              return el;
+            });
+          }
+          let result = JSON.stringify(list, null, 4);
+          $(".result").value = result;
+        };
+        const extractAddress = async () => {
+          let list = await isValidListAccount(".listaccount2");
+          if (!list) return alert("listaccount.json tidak valid. Gunakan https://jsonlint.com untuk mengecek jsonmu");
+          let type = $("#type").value;
+          let address = [];
+          list.forEach((el) => {
+            address.push(el[type]);
+          });
+          let result = address.join("\n");
+          $(".result2").value = result;
+        };
+        const executeChecker = async () => {
+          let list = await isValidListAccount(".listaccount2");
+          if (!list) return alert("listaccount.json tidak valid. Gunakan https://jsonlint.com untuk mengecek jsonmu");
+          let winlist = $("#winnerlist").value;
+          if (!winlist) return alert("Winnerlist tidak boleh kosong");
+          winlist = winlist.split("\n").map((el) => el.trim());
+          if (!winlist.length) return alert("Winnerlist tidak boleh kosong");
+          let type = $("#type").value;
+          let address = [];
+          list.forEach((el) => {
+            if (winlist.includes(el[type])) {
+              address.push(el[type]);
+            }
+          });
+          let result = address.join("\n");
+          $(".result2").value = result;
+        };
+      </script>
   </body>
 </html>
