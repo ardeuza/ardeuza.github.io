@@ -48,11 +48,57 @@
     </style>
   </head>
   <body>
-    <center>
+    <div class="container-fluid">
+      <!-- box header -->
+      <header class="box-header">
+        <div class="box-logo">
+          <a href="index.html">
+            <img src="img/logo.png" width="80" alt="Logo">
+          </a>
+        </div>
+        <!-- box-nav -->
+        <a class="box-primary-nav-trigger" href="#0">
+          <span class="box-menu-text">Menu</span>
+          <span class="box-menu-icon"></span>
+        </a>
+        <!-- box-primary-nav-trigger -->
+      </header>
+      <!-- end box header -->
+      <!-- nav -->
+      <nav>
+        <ul class="box-primary-nav">
+          <li class="box-label">Menu</li>
+          <li>
+            <a href="tools.html">Tools <i class="ion-ios-circle-filled color"></i></a>
+          </li>
+		  <li>
+            <a href="#">Soon !</a>
+          </li>
+		  <li>
+            <a href="#">Soon !</a>
+          </li>
+		  <li>
+            <a href="#">Soon !</a>
+          </li>
+          <li class="box-label">Follow me</li>
+          <li class="box-social">
+            <a href="https://github.com/ardeuza">
+              <i class="ion-social-github"></i>
+            </a>
+          </li>
+          <li class="box-social">
+            <a href="https://twitter.com/ardeuza">
+              <i class="ion-social-twitter"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- end nav -->
+    <center><br><br><br>
 	          <h3 class="box-headline letters rotate-2">
             <span class="box-words-wrapper">
-              <b class="is-visible">Tools.</b>
-              <b>&nbsp;&nbsp;&nbsp;Teledrop.</b>
+              <b class="is-visible">TOOLS.</b>
+              <b>&nbsp;&nbsp;&nbsp;TELEDROP.</b>
             </span>
           </h3><br>
       <button onclick="toggleFormatter()">Formatter</button>
@@ -283,7 +329,7 @@
           let result = address.join("\n");
           $(".result2").value = result;
         };
-      </script>
+      </script><center>
 	  <button onclick="window.location.href='https://ardeuz.my.id/';">Kembali</button>  
 	      <!-- jQuery -->
     <script src="js/jquery-2.1.1.js"></script>
