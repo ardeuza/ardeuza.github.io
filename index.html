@@ -1,117 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Website | Home</title>
-  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f7f7f7;
-      color: #333333;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 0;
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      color: #333333;
-      text-decoration: none;
-    }
-
-    .nav-menu {
-      list-style: none;
-      display: flex;
-    }
-
-    .nav-menu li {
-      margin-left: 20px;
-    }
-
-    .nav-menu a {
-      color: #333333;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .nav-menu a:hover {
-      color: #888888;
-    }
-
-    .hero {
-      text-align: center;
-      margin-top: 100px;
-    }
-
-    .hero h1 {
-      font-size: 48px;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 18px;
-      margin-bottom: 40px;
-      color: #888888;
-    }
-
-    .cta-button {
-      display: inline-block;
-      background-color: #333333;
-      color: #ffffff;
-      padding: 12px 24px;
-      border-radius: 4px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .cta-button:hover {
-      background-color: #555555;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="container">
-      <a href="#" class="logo">Your Website</a>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Ardeuz | Home</title>
+    <link rel="icon" href="img/fav.png" type="image/x-icon">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="ionicons/css/ionicons.min.css" rel="stylesheet">
+    <!-- main css -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- modernizr -->
+    <script src="js/modernizr.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+									<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+									<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+									<![endif]-->
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="pre-container">
+        <div class="spinner">
+          <div class="double-bounce1"></div>
+          <div class="double-bounce2"></div>
+        </div>
+      </div>
+    </div>
+    <!-- end Preloader -->
+    <div class="container-fluid">
+      <!-- box header -->
+      <header class="box-header">
+        <div class="box-logo">
+          <a href="index.html">
+            <img src="img/logo.png" width="80" alt="Logo">
+          </a>
+        </div>
+        <!-- box-nav -->
+        <a class="box-primary-nav-trigger" href="#0">
+          <span class="box-menu-text">Menu</span>
+          <span class="box-menu-icon"></span>
+        </a>
+        <!-- box-primary-nav-trigger -->
+      </header>
+      <!-- end box header -->
+      <!-- nav -->
       <nav>
-        <ul class="nav-menu">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Contact</a></li>
+        <ul class="box-primary-nav">
+          <li class="box-label">Menu</li>
+          <li>
+            <a href="teledrop">Teledrop <i class="ion-ios-circle-filled color"></i></a>
+          </li>
+		  <li>
+            <a href="nulis">Nulis <i class="ion-ios-circle-filled color"></i></a>
+          </li>
+		  <li>
+            <a href="#">Soon !</a>
+          </li>
+		  <li>
+            <a href="#">Soon !</a>
+          </li>
+          <li class="box-label">Follow me</li>
+          <li class="box-social">
+            <a href="https://github.com/ardeuza">
+              <i class="ion-social-github"></i>
+            </a>
+          </li>
+          <li class="box-social">
+            <a href="https://twitter.com/ardeuza">
+              <i class="ion-social-twitter"></i>
+            </a>
+          </li>
         </ul>
       </nav>
+      <!-- end nav -->
+      <!-- box-intro -->
+      <section class="box-intro">
+        <div class="table-cell">
+          <h1 class="box-headline letters rotate-2">
+            <span class="box-words-wrapper">
+              <b class="is-visible">Welcome.</b>
+              <b>&nbsp;&nbsp;&nbsp;&nbsp;Testnet.</b>
+			  <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Node.</b>
+              <b>Validator.</b>
+			  <b>&nbsp;&nbsp;&nbsp;Airdrop.</b>
+            </span>
+          </h1>
+          <h5>let's move forward with cryptocurrencies</h5>
+        </div>
+      </section>
+      <!-- end box-intro -->
     </div>
-  </header>
-
-  <section class="hero">
-    <div class="container">
-      <h1>Welcome to Your Website</h1>
-      <p>Discover the power of simplicity.</p>
-      <a href="#" class="cta-button">Get Started</a>
-    </div>
-  </section>
-
-  <script src="js/main.js"></script>
-</body>
+    <!-- jQuery -->
+    <script src="js/jquery-2.1.1.js"></script>
+    <!--  plugins -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/animated-headline.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <!--  custom script -->
+    <script src="js/custom.js"></script>
+  </body>
 </html>
