@@ -8,6 +8,9 @@
   <!-- Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta1/css/bootstrap.min.css" rel="stylesheet">
 
+  <!-- Font Awesome CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" rel="stylesheet">
+
   <!-- Custom CSS -->
   <style>
     body {
@@ -27,6 +30,38 @@
       min-width: 300px;
     }
 
+    .title-bar {
+      background-color: #252525;
+      color: #8c8c8c;
+      padding: 5px;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .title-button {
+      background-color: transparent;
+      border: none;
+      color: #8c8c8c;
+      margin-right: 5px;
+      cursor: pointer;
+    }
+
+    .title-button.yellow { color: yellow; }
+    .title-button.green { color: lime; }
+    .title-button.red { color: red; }
+
+    .title-button i {
+      font-size: 10px;
+      border-radius: 50%;
+      padding: 5px;
+    }
+
+    .title-button.yellow i { background-color: yellow; }
+    .title-button.green i { background-color: lime; }
+    .title-button.red i { background-color: red; }
+
     .cursor {
       animation: blink 1s infinite;
     }
@@ -43,6 +78,11 @@
 <body>
   <div class="container">
     <div class="terminal-window">
+      <div class="title-bar">
+        <button class="title-button yellow"><i class="fas fa-circle"></i></button>
+        <button class="title-button green"><i class="fas fa-circle"></i></button>
+        <button class="title-button red"><i class="fas fa-circle"></i></button>
+      </div>
       <p id="text"></p>
       <span class="cursor">|</span>
     </div>
@@ -51,6 +91,9 @@
   <!-- Optional JavaScript; choose one of the two! -->
   <!-- Option 1: Bootstrap Bundle with Popper -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Font Awesome JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/js/all.min.js"></script>
 
   <!-- Custom JavaScript -->
   <script>
